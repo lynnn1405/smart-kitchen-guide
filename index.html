@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Kitchen Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffffff;
+      color: #000;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    header {
+      background-color: #ffffff;
+      padding: 20px 40px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 600;
+      color: #d600d6;
+      transition: color 0.3s ease;
+    }
+
+    nav a {
+      text-decoration: none;
+      margin: 0 10px;
+      color: #000;
+      font-weight: 400;
+      transition: color 0.3s ease;
+    }
+
+    .mode-toggle {
+      padding: 6px 14px;
+      border: 2px solid #d600d6;
+      background-color: transparent;
+      font-weight: 600;
+      cursor: pointer;
+      color: #d600d6;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .mode-toggle:hover {
+      background-color: #d600d6;
+      color: white;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px 40px;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-text h1 {
+      font-size: 36px;
+      font-weight: 900;
+      color: #d600d6;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      font-weight: 400;
+      margin-bottom: 30px;
+      color: #000000;
+    }
+
+    .btn-jelajah {
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      background-color: #d600d6;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-jelajah:hover {
+      background-color: #b000b0;
+    }
+
+    .hero .image {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .hero .image img {
+      max-width: 100%;
+      width: 1200px;
+      height: auto;
+      padding-bottom: 36px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+
+      .hero .image {
+        justify-content: center;
+        margin-bottom: 30px;
+      }
+    }
+
+    nav a.active {
+    border-bottom: 2px solid #d600d6;
+    padding-bottom: 4px;
+    font-weight: 600;
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <header>
+    <div class="navbar">
+      <div class="logo">Smart Kitchen Guide.</div>
+      <nav>
+        <a href="index.html" class="active" aria-current="page">Home</a>
+        <a href="resep.html">Resep</a>
+        <a href="perawatan.html">Perawatan Dapur</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Panduan Memasak & Perawatan Dapur</h1>
+        <p>Temukan resep favorit keluarga dan tips perawatan dapur dalam satu tempat!</p>
+        <button class="btn-jelajah" onclick="window.location.href='resep.html'">Jelajahi</button>
+      </div>
+      <div class="image">
+        <img src="images/memasak.png" alt="Gambar memasak">
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Tambahkan interaksi untuk nav item
+    const navLinks = document.querySelectorAll("nav a");
+
+    navLinks.forEach(link => {
+        link.addEventListener("click", function () {
+        navLinks.forEach(l => l.classList.remove("active")); // hapus class active dari semua
+        this.classList.add("active"); // tambahkan ke yang diklik
+        });
+    });
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resep | Smart Kitchen Guide</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffffff;
+      color: #000;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    header {
+      background-color: #ffffff;
+      padding: 20px 40px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 600;
+      color: #d600d6;
+      transition: color 0.3s ease;
+    }
+
+    nav a {
+      text-decoration: none;
+      margin: 0 10px;
+      color: #000;
+      font-weight: 400;
+      transition: color 0.3s ease;
+    }
+
+    .mode-toggle {
+      padding: 6px 14px;
+      border: 2px solid #d600d6;
+      background-color: transparent;
+      font-weight: 600;
+      cursor: pointer;
+      color: #d600d6;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .mode-toggle:hover {
+      background-color: #d600d6;
+      color: white;
+    }
+
+    .search-bar {
+      margin: 20px auto;
+      max-width: 600px;
+      background-color: #d9d9d9;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .search-bar input {
+      border: none;
+      background: transparent;
+      outline: none;
+      flex: 1;
+      font-size: 16px;
+      margin-left: 10px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .section-title span {
+      color: #b300b3;
+    }
+
+    .resep-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .resep-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: background 0.3s ease;
+    }
+
+
+    .resep-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .resep-card h4 {
+      margin: 10px 0;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .btn-detail {
+      background-color: #d600d6;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-detail:hover {
+      background-color: #b300b3;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+
+      .hero .image {
+        justify-content: center;
+        margin-bottom: 30px;
+      }
+    }
+
+    nav a.active {
+    border-bottom: 2px solid #d600d6;
+    padding-bottom: 4px;
+    font-weight: 600;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="navbar">
+    <div class="logo"> Smart Kitchen Guide.</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="resep.html" class="active" aria-current="page">Resep</a>
+      <a href="perawatan.html">Perawatan Dapur</a>
+    </nav>
+    </div>
+  </header>
+
+  <div class="search-bar" role="search">
+    <span aria-hidden="true">🔍</span>
+    <input type="text" id="searchInput" placeholder="Cari Resep" />
+  </div>
+
+  <h2 class="section-title">Resep Menu <span>Makanan Dan Minuman</span></h2>
+
+  <div class="resep-container">
+    <div class="resep-card">
+      <img src="images/nasi goreng.jpeg" alt="Nasi goreng spesial dengan telur dan ayam">
+      <h4>Nasi Goreng Spesial</h4>
+      <a href="detail-resep.html?id=nasi-goreng-spesial" class="btn-detail" title="Lihat resep Nasi Goreng Spesial">Lihat Detail</a>
+    </div>
+    <div class="resep-card">
+      <img src="images/es teler.jpg" alt="Minuman es teler dengan buah segar dan susu">
+      <h4>Es Teler</h4>
+      <a href="detail-resep.html?id=es-teler" class="btn-detail" title="Lihat resep Es Teler">Lihat Detail</a>
+    </div>
+    <div class="resep-card">
+      <img src="images/mie ayam bakso.webp" alt="Semangkuk mie ayam dan bakso">
+      <h4>Mie Ayam Bakso</h4>
+      <a href="detail-resep.html?id=mie-ayam-bakso" class="btn-detail" title="Lihat resep Mie Ayam Bakso">Lihat Detail</a>
+    </div>
+    <div class="resep-card">
+      <img src="images/es timun serut.jpg" alt="Es timun serut segar dengan biji selasih">
+      <h4>Es Timun Serut</h4>
+      <a href="detail-resep.html?id=es-timun-serut" class="btn-detail" title="Lihat resep Es Timun Serut">Lihat Detail</a>
+    </div>
+    <div class="resep-card">
+      <img src="images/tumis_kangkung.webp" alt="Tumis kangkung dengan bawang putih dan cabai">
+      <h4>Tumis Kangkung</h4>
+      <a href="detail-resep.html?id=tumis-kangkung" class="btn-detail" title="Lihat resep Tumis Kangkung">Lihat Detail</a>
+    </div>
+    <div class="resep-card">
+      <img src="images/gulai ikan mujair.jpg" alt="Gulai ikan mujair kuah kuning">
+      <h4>Gulai Ikan Mujair</h4>
+      <a href="detail-resep.html?id=gulai-ikan-mujair" class="btn-detail" title="Lihat resep Gulai Ikan Mujair">Lihat Detail</a>
+    </div>
+    <div class="resep-card">
+      <img src="images/ayam panggang saus madu.jpg" alt="Ayam panggang dengan saus madu">
+      <h4>Ayam Panggang Madu</h4>
+      <a href="detail-resep.html?id=ayam-panggang-madu" class="btn-detail" title="Lihat resep Ayam Panggang Madu">Lihat Detail</a>
+    </div>
+    <div class="resep-card">
+      <img src="images/bolu pisang kukus.jpg" alt="Bolu pisang kukus lembut">
+      <h4>Bolu Pisang Kukus</h4>
+      <a href="detail-resep.html?id=bolu-pisang-kukus" class="btn-detail" title="Lihat resep Bolu Pisang Kukus">Lihat Detail</a>
+    </div>
+    <div class="resep-card" data-nama="Es Cincau Susu">
+        <img src="images/es cincau susu.webp" alt="Es Cincau Susu">
+        <h4>Es Cincau Susu</h4>
+        <a href="detail-resep.html?id=es-cincau-susu" class="btn-detail">Lihat Detail</a>
+    </div>
+    <div class="resep-card" data-nama="Salad Buah">
+        <img src="images/salad buah.jpeg" alt="Salad Buah Segar">
+        <h4>Salad Buah Segar</h4>
+        <a href="detail-resep.html?id=salad-buah" class="btn-detail">Lihat Detail</a>
+    </div>
+    <div class="resep-card" data-nama="Cheesecake Oreo">
+        <img src="images/cheesecake oreo.webp" alt="Cheesecake Oreo">
+        <h4>Cheesecake Oreo</h4>
+        <a href="detail-resep.html?id=cheesecake-oreo" class="btn-detail">Lihat Detail</a>
+    </div>
+    <div class="resep-card" data-nama="Sayur Asem">
+        <img src="images/sayur asem.jpg" alt="Sayur Asem Segar">
+        <h4>Sayur Asem</h4>
+        <a href="detail-resep.html?id=sayur-asem" class="btn-detail">Lihat Detail</a>
+    </div>
+    <div class="resep-card" data-nama="Mie Goreng Jawa">
+        <img src="images/mie goreng jawa.jpg" alt="Mie Goreng Jawa">
+        <h4>Mie Goreng Jawa</h4>
+        <a href="detail-resep.html?id=mie-goreng-jawa" class="btn-detail">Lihat Detail</a>
+      </div>
+      <div class="resep-card" data-nama="Puding Mangga">
+        <img src="images/puding mangga.jpg" alt="Puding Mangga Lembut">
+        <h4>Puding Mangga</h4>
+        <a href="detail-resep.html?id=puding-mangga" class="btn-detail">Lihat Detail</a>
+      </div>    
+      <div class="resep-card" data-nama="Soto Ayam">
+        <img src="images/soto ayam.webp" alt="Soto Ayam">
+        <h4>Soto Ayam</h4>
+        <a href="detail-resep.html?id=soto-ayam" class="btn-detail">Lihat Detail</a>
+      </div>
+      <div class="resep-card" data-nama="Roti Bakar Coklat Keju">
+        <img src="images/roti bakar coklat keju.jpeg" alt="Roti Bakar Coklat Keju">
+        <h4>Roti Bakar Coklat Keju</h4>
+        <a href="detail-resep.html?id=roti-bakar" class="btn-detail">Lihat Detail</a>
+      </div>
+      <div class="resep-card" data-nama="Perkedel Kentang">
+        <img src="images/perkedel kentang.jpg" alt="Perkedel Kentang">
+        <h4>Perkedel Kentang</h4>
+        <a href="detail-resep.html?id=perkedel-kentang" class="btn-detail">Lihat Detail</a>
+      </div>
+      <div class="resep-card" data-nama="Dadar Gulung">
+        <img src="images/dadar gulung.jpg" alt="Dadar Gulung Isi Kelapa">
+        <h4>Dadar Gulung</h4>
+        <a href="detail-resep.html?id=dadar-gulung" class="btn-detail">Lihat Detail</a>
+      </div>
+      <div class="resep-card" data-nama="Nasi Uduk">
+        <img src="images/nasi uduk.webp" alt="Nasi Uduk Komplit">
+        <h4>Nasi Uduk</h4>
+        <a href="detail-resep.html?id=nasi-uduk" class="btn-detail">Lihat Detail</a>
+      </div>
+      <div class="resep-card" data-nama="Bakwan Sayur">
+        <img src="images/bakwan sayur.jpg" alt="Bakwan Sayur Renyah">
+        <h4>Bakwan Sayur</h4>
+        <a href="detail-resep.html?id=bakwan-sayur" class="btn-detail">Lihat Detail</a>
+      </div>
+
+  <script>
+
+    document.getElementById('searchInput').addEventListener('input', function () {
+        const keyword = this.value.toLowerCase();
+        const resepCards = document.querySelectorAll('.resep-card');
+
+        resepCards.forEach(function (card) {
+        const title = card.querySelector('h4').textContent.toLowerCase();
+        card.style.display = title.includes(keyword) ? 'block' : 'none';
+        });
+    });
+    // Interaksi menu aktif
+    const navLinks = document.querySelectorAll("nav a");
+
+    navLinks.forEach(link => {
+      link.addEventListener("click", function () {
+        navLinks.forEach(l => l.classList.remove("active"));
+        this.classList.add("active");
+      });
+    });
+
+  </script>
+
+</body>
+</html>

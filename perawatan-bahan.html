@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Kitchen Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffffff;
+      color: #000;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    header {
+      background-color: #ffffff;
+      padding: 20px 40px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 600;
+      color: #d600d6;
+      transition: color 0.3s ease;
+    }
+
+    nav a {
+      text-decoration: none;
+      margin: 0 10px;
+      color: #000;
+      font-weight: 400;
+      transition: color 0.3s ease;
+    }
+
+    .mode-toggle {
+      padding: 6px 14px;
+      border: 2px solid #d600d6;
+      background-color: transparent;
+      font-weight: 600;
+      cursor: pointer;
+      color: #d600d6;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .mode-toggle:hover {
+      background-color: #d600d6;
+      color: white;
+    }
+
+    h2 {
+      color: #d600d6;
+      text-align: center;
+      margin-top: 30px;
+    }
+    .card {
+      background-color: #fae6fa;
+      border-left: 6px solid #d600d6;
+      padding: 20px;
+      margin: 20px auto;
+      width: 80%;
+      border-radius: 8px;
+    }
+    .card h3 {
+      margin-top: 0;
+    }
+    .card ul {
+      padding-left: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+
+      .hero .image {
+        justify-content: center;
+        margin-bottom: 30px;
+      }
+    }
+
+    nav a.active {
+    border-bottom: 2px solid #d600d6;
+    padding-bottom: 4px;
+    font-weight: 600;
+    }
+
+    .arrow-left {
+      display: inline-flex;
+      align-items: center;
+      font-size: 15px;
+      padding: 10px 15px;
+      border: 2px solid #d600d6;
+      color: #d600d6;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin-left: 130px;
+      margin-top: 40px; 
+         
+    }
+
+    .arrow-left i {
+      margin-right: 8px;
+    }
+
+    .arrow-left:hover {
+      background-color: #d600d6;
+      color: white;
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <header>
+    <div class="navbar">
+      <div class="logo">Smart Kitchen Guide.</div>
+      <nav>
+        <a href="index.html" >Home</a>
+        <a href="resep.html">Resep</a>
+        <a href="perawatan.html" class="active" aria-current="page">Perawatan Dapur</a>
+      </nav>
+    </div>
+  </header>
+
+
+<a href="perawatan.html" class="arrow-left">&#8592;</a>
+
+<h2>Perawatan Bahan Dapur</h2>
+
+<div class="card">
+    <h3>🍅 Sayuran Segar</h3>
+    <ul>
+      <li>Cuci sayur sebelum disimpan, keringkan lalu bungkus dengan kertas tisu & simpan di kulkas.</li>
+      <li>Jauhkan dari buah yang cepat matang (seperti pisang) agar tidak cepat busuk.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🥩 Daging Mentah</h3>
+    <ul>
+      <li>Simpan di dalam freezer jika tidak langsung digunakan.</li>
+      <li>Gunakan wadah tertutup rapat atau bungkus dengan plastik vakum agar tahan lama.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🍞 Bahan Kering</h3>
+    <ul>
+      <li>Simpan tepung, gula, dan bahan kering lainnya dalam toples kedap udara.</li>
+      <li>Letakkan di tempat sejuk dan kering untuk mencegah kutu atau jamur.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>🍚 Beras</h3>
+    <ul>
+      <li>Simpan dalam wadah kedap udara di tempat kering dan sejuk.</li>
+      <li>Tambahkan daun salam atau cabai kering untuk menghindari kutu beras.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🥛 Susu</h3>
+    <ul>
+      <li>Simpan di kulkas dengan suhu 0–4°C dan tutup rapat setelah dibuka.</li>
+      <li>Jangan simpan di pintu kulkas karena suhu sering berubah-ubah saat dibuka.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🧀 Keju</h3>
+    <ul>
+      <li>Bungkus dengan kertas keju atau kertas roti, lalu simpan dalam wadah tertutup di kulkas.</li>
+      <li>Potong bagian yang berjamur (jika jenis keju keras), jangan langsung dibuang semua.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🥚 Telur</h3>
+    <ul>
+      <li>Simpan dalam karton asli dan letakkan di dalam rak kulkas (bukan pintu).</li>
+      <li>Jangan mencuci telur sebelum disimpan agar lapisan pelindung alami tidak hilang.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🍗 Ayam Mentah</h3>
+    <ul>
+      <li>Letakkan dalam wadah tertutup dan simpan di kulkas bagian bawah agar tidak mencemari bahan lain.</li>
+      <li>Jika tidak langsung digunakan, simpan dalam freezer maksimal 6 bulan.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🐟 Ikan Segar</h3>
+    <ul>
+      <li>Bersihkan sisik dan isi perut sebelum disimpan.</li>
+      <li>Bungkus dengan plastik vakum dan simpan di freezer.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🥕 Umbi-umbian (Wortel, Kentang, dll)</h3>
+    <ul>
+      <li>Simpan di tempat sejuk, kering, dan gelap.</li>
+      <li>Jangan simpan kentang bersama bawang karena bisa mempercepat pembusukan.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🧅 Bawang Merah & Bawang Putih</h3>
+    <ul>
+      <li>Simpan di tempat berventilasi baik, hindari kulkas karena bisa membuat lembek dan berjamur.</li>
+      <li>Jauhkan dari bahan yang menghasilkan kelembapan.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🍌 Buah (Pisang, Apel, dll)</h3>
+    <ul>
+      <li>Buah matang menghasilkan gas etilen, simpan terpisah dari sayur atau buah lain untuk memperlambat pembusukan.</li>
+      <li>Buah lembek bisa disimpan di kulkas agar tahan 2–3 hari lebih lama.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🍫 Cokelat</h3>
+    <ul>
+      <li>Simpan di tempat sejuk dan kering, idealnya antara 15–18°C.</li>
+      <li>Hindari suhu lembap atau kulkas karena bisa menimbulkan lapisan putih (bloom).</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>🥬 Daun-daunan (Bayam, Sawi, dll)</h3>
+    <ul>
+      <li>Cuci bersih, tiriskan airnya, lalu bungkus dengan tisu dapur atau kain bersih dan simpan di kulkas.</li>
+      <li>Jangan menyimpan sayur basah langsung dalam plastik karena mempercepat pembusukan.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🥜 Kacang-kacangan</h3>
+    <ul>
+      <li>Simpan dalam wadah kedap udara di tempat sejuk dan kering.</li>
+      <li>Untuk penyimpanan jangka panjang, bisa dibekukan agar tidak tengik.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🍯 Madu</h3>
+    <ul>
+      <li>Simpan di suhu ruangan dalam wadah tertutup rapat.</li>
+      <li>Jika mengkristal, rendam botol dalam air hangat untuk mengembalikan bentuk cairnya.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🧂 Garam</h3>
+    <ul>
+      <li>Gunakan wadah kedap udara untuk menghindari kelembapan.</li>
+      <li>Bisa tambahkan beberapa butir beras di dalam tempat garam untuk menyerap kelembapan.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🫙 Minyak Goreng</h3>
+    <ul>
+      <li>Simpan di tempat sejuk, jauh dari sinar matahari langsung agar tidak cepat tengik.</li>
+      <li>Gunakan tutup botol setiap habis pakai untuk mencegah kontaminasi debu.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🍵 Teh & Kopi Bubuk</h3>
+    <ul>
+      <li>Simpan dalam toples kaca atau logam tertutup rapat agar aroma tidak hilang.</li>
+      <li>Hindari tempat lembap karena bisa menggumpal atau jamuran.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🥫 Makanan Kaleng</h3>
+    <ul>
+      <li>Simpan di tempat sejuk dan kering, jauh dari panas atau lembap.</li>
+      <li>Setelah dibuka, pindahkan isinya ke wadah kaca/plastik dan simpan di kulkas.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🥖 Roti</h3>
+    <ul>
+      <li>Simpan dalam plastik atau kotak roti tertutup di suhu ruang, jauh dari sinar matahari langsung.</li>
+      <li>Jika ingin tahan lama, bisa dibekukan dan dipanaskan kembali saat mau dikonsumsi.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🍰 Kue Basah</h3>
+    <ul>
+      <li>Simpan dalam wadah tertutup di kulkas, maksimal 2–3 hari.</li>
+      <li>Hangatkan dengan microwave sebelum dikonsumsi agar teksturnya tetap enak.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🍦 Es Krim</h3>
+    <ul>
+      <li>Simpan di freezer suhu -18°C, hindari membuka-tutup freezer terlalu sering.</li>
+      <li>Jangan biarkan mencair lalu dibekukan ulang karena akan merusak tekstur.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🥫 Saus & Kecap</h3>
+    <ul>
+      <li>Setelah dibuka, simpan di kulkas dengan tutup rapat.</li>
+      <li>Bersihkan ujung botol secara berkala agar tidak berjamur.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🧈 Mentega & Margarin</h3>
+    <ul>
+      <li>Simpan di kulkas dalam wadah tertutup, hindari terkena udara langsung.</li>
+      <li>Ambil dengan sendok bersih agar tidak terkontaminasi.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🍋 Jeruk Nipis / Lemon</h3>
+    <ul>
+      <li>Bisa disimpan utuh di kulkas selama 1-2 minggu.</li>
+      <li>Jika sudah dipotong, bungkus dengan plastik wrap dan simpan di kulkas.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🧃 Minuman Kemasan</h3>
+    <ul>
+      <li>Simpan di kulkas setelah dibuka, dan habiskan dalam waktu 2–3 hari.</li>
+      <li>Pastikan tutup rapat agar tidak menyerap bau dari kulkas.</li>
+    </ul>
+  </div>  
+  
+</body>
+</html>

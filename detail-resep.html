@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Resep - Smart Kitchen Guide</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 100px;
+      padding: 0;
+      background-color: #f8f8f8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    img {
+      width: 500px;
+      border-radius: 10px;
+      border: 10px solid #d600d6;
+      padding: 0px 0px;
+      margin-bottom: 30px;
+    }
+    h1 {
+      color: #d600d6;
+      font-size: 28px;
+      margin-bottom: 15px;
+      margin-top: 50px;
+    }
+    h3 {
+      margin-top: 30px;
+      color: #d600d6;
+    }
+    ul, ol {
+      margin-left: 20px;
+    }
+
+
+    .arrow-left {
+      display: inline-flex;
+      align-items: center;
+      font-size: 15px;
+      padding: 9px 10px;
+      border: 2px solid #d600d6;
+      color: #d600d6;
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin-left: 0px;
+      margin-top: 0px;          
+    }
+
+    .arrow-left i {
+      margin-right: 8px;
+    }
+
+    .arrow-left:hover {
+      background-color: #d600d6;
+      color: white;
+    }
+
+  </style>
+</head>
+<body>
+
+
+  <a href="resep.html" class="arrow-left">&#8592;</a>
+
+
+  <h1 id="judul-resep"></h1>
+  <img id="gambar-resep" src="" alt="Gambar Resep">
+  <h3>Bahan-bahan:</h3>
+  <ul id="bahan-list"></ul>
+  <h3>Langkah-langkah:</h3>
+  <ol id="langkah-list"></ol>
+
+  <script>
+    const resepData = {
+      "nasi-goreng-spesial": {
+        judul: "Nasi Goreng Spesial",
+        gambar: "images/nasi goreng.jpeg",
+        bahan: [
+            "2 piring nasi putih", 
+            "2 butir telur", 
+            "2 sdm kecap manis", 
+            "1 sdm saus tiram", 
+            "2 siung bawang putih (cincang halus)", 
+            "1 batang daun bawang, (iris tipis)", 
+            "Garam dan merica secukupnya"
+        ],
+        langkah: [
+            "Panaskan sedikit minyak, tumis bawang putih hingga wangi.", 
+            "Masukkan telur, orak-arik sampai matang.", 
+            "Tambahkan nasi putih, aduk hingga tercampur rata.", 
+            "Tuang kecap manis dan saus tiram. Aduk merata", 
+            "Beri garam dan merica sesuai selera.",
+            "Masukkan daun bawang. Aduk rata dan sajikan hangat."
+        ]
+      },
+
+
+      "es-teler": {
+        judul: "Es Teler",
+        gambar: "images/es teler.jpg",
+        bahan: [
+            "Alpukat, dikeruk", 
+            "Nangka, iris", 
+            "Kelapa muda, dikeruk", 
+            "Susu kental manis", 
+            "Sirup cocopandan", 
+            "Es serut atau batu es"
+        ],
+        langkah: [
+            "Siapkan mangkuk atau gelas besar.", 
+            "Masukkan semua buah dan es.", 
+            "Tuang susu dan sirup cocopandan.", 
+            "Aduk rata dan sajikan dingin."
+        ]
+      },
+
+
+      "mie-ayam-bakso": {
+        judul: "Mie Ayam Bakso",
+        gambar: "images/mie ayam bakso.webp",
+        bahan: [
+            "Mie telur rebus", 
+            "Bakso secukupnya", 
+            "Daging ayam cincang", 
+            "Bawang putih & daun bawang", 
+            "Kecap manis, minyak ayam", "Kaldu ayam"
+        ],
+        langkah: [
+            "Tumis bawang dan ayam cincang, aduk rata.", 
+            "Tambahkan kecap dan bumbu lainnya, masak hingga harum", 
+            "Susun mie, ayam, bakso dalam mangkuk.", 
+            "Siram dengan kaldu panas dan sajikan."]
+      },
+
+
+      "es-timun-serut": {
+        judul: "Es Timun Serut",
+        gambar: "images/es timun serut.jpg",
+        bahan: [
+            "Timun serut", 
+            "Biji selasih", 
+            "Air jeruk nipis", 
+            "Air gula", 
+            "Es batu"
+        ],
+        langkah: [
+            "Campur timun serut dan biji selasih.", 
+            "Tuang air gula dan jeruk nipis.", 
+            "Tambahkan es batu dan sajikan dingin."
+        ]
+      },
+
+      
+      "tumis-kangkung": {
+        judul: "Tumis Kangkung",
+        gambar: "images/tumis_kangkung.webp",
+        bahan: [
+            "1 ikat kangkung", 
+            "2 siung bawang putih", 
+            "2 buah cabai merah", 
+            "Garam dan kaldu bubuk", 
+            "Minyak untuk menumis"
+        ],
+        langkah: [
+            "Tumis bawang dan cabai sampai harum.", 
+            "Masukkan kangkung, aduk cepat.", 
+            "Beri garam dan kaldu, masak sebentar.", 
+            "Angkat dan sajikan."
+        ]
+      },
+
+
+      "gulai-ikan-mujair": {
+        judul: "Gulai Ikan Mujair",
+        gambar: "images/gulai ikan mujair.jpg",
+        bahan: [
+            "2 ekor ikan mujair", 
+            "Santan 500 ml", 
+            "Bumbu kuning: kunyit, bawang, cabai", 
+            "Daun jeruk, serai", 
+            "Garam dan kaldu"
+        ],
+        langkah: [
+            "Tumis bumbu halus dan rempah.", 
+            "Masukkan ikan dan santan.", 
+            "Masak hingga ikan matang dan kuah mengental.", 
+            "Angkat dan sajikan dengan nasi hangat."
+        ]
+      },
+
+
+      "ayam-panggang-madu": {
+        judul: "Ayam Panggang Madu",
+        gambar: "images/ayam panggang saus madu.jpg",
+        bahan: [
+            "1 ekor ayam, potong", 
+            "Madu 3 sdm", 
+            "Kecap manis 2 sdm", 
+            "Bawang putih halus, merica", 
+            "Jeruk nipis"
+        ],
+        langkah: [
+            "Lumuri ayam dengan bumbu & marinasi.", 
+            "Panggang dalam oven hingga matang.", 
+            "Olesi madu selama pemanggangan.", 
+            "Angkat dan sajikan."
+        ]
+      },
+
+
+      "bolu-pisang-kukus": {
+        judul: "Bolu Pisang Kukus",
+        gambar: "images/bolu pisang kukus.jpg",
+        bahan: [
+            "3 buah pisang matang", 
+            "2 butir telur", 
+            "5 sdm gula pasir", 
+            "1 sdt soda kue", 
+            "8 sdm tepung terigu", 
+            "Vanili & garam", 
+            "Minyak goreng"
+        ],
+        langkah: [
+            "Haluskan pisang dan campur semua bahan.", 
+            "Tuang ke loyang yang sudah diolesi minyak.", 
+            "Kukus selama 30 menit.", 
+            "Angkat dan dinginkan sebelum disajikan."
+        ]
+      },
+
+      "es-cincau-susu": {
+        judul: "Es Cincau Susu",
+        gambar: "images/es cincau susu.webp",
+        bahan: [
+            "1 bungkus cincau hitam, serut",
+            "200 ml susu kental manis",
+            "300 ml air matang",
+            "Es batu secukupnya"
+        ],
+        langkah: [
+            "Campur cincau, susu, dan air dalam gelas.",
+            "Tambahkan es batu, aduk rata.",
+            "Sajikan dingin."
+        ]
+      },
+
+
+      "salad-buah": {
+        judul: "Salad Buah Segar",
+        gambar: "images/salad buah.jpeg",
+        bahan: [
+            "100 gr semangka, potong",
+            "100 gr melon, potong",
+            "100 gr apel, potong",
+            "Mayones, yogurt, keju parut secukupnya"
+        ],
+        langkah: [
+            "Campurkan semua buah dalam wadah.",
+            "Tuangkan mayones dan yogurt.",
+            "Aduk rata, beri keju parut.",
+            "Simpan di kulkas sebelum disajikan."
+        ]
+      },
+
+
+      "cheesecake-oreo": {
+        judul: "Cheesecake Oreo",
+        gambar: "images/cheesecake oreo.webp",
+        bahan: [
+            "10 keping Oreo, hancurkan",
+            "100 gr cream cheese",
+            "2 sdm gula bubuk",
+            "100 ml whipped cream"
+        ],
+        langkah: [
+            "Campur cream cheese dan gula bubuk.",
+            "Tambahkan whipped cream, aduk rata.",
+            "Siapkan gelas, lapisi Oreo dan krim bergantian.",
+            "Simpan di kulkas 1 jam, sajikan dingin."
+            ]
+      },
+
+      "sayur-asem": {
+        judul: "Sayur Asem",
+        gambar: "images/sayur asem.jpg",
+        bahan: [
+            "100 gr kacang panjang",
+            "1 buah jagung, potong",
+            "2 lembar daun melinjo",
+            "1 buah labu siam, potong",
+            "2 sdm asam jawa, larutkan",
+            "Bumbu halus: bawang merah, bawang putih, cabe, garam"
+        ],
+        langkah: [
+            "Didihkan air, masukkan bumbu dan sayuran.",
+            "Masak hingga matang.",
+            "Tambahkan air asam.",
+            "Masak sebentar lalu sajikan."
+        ]
+      },
+
+
+      "mie-goreng-jawa": {
+        judul: "Mie Goreng Jawa",
+        gambar: "images/mie goreng jawa.jpg",
+        bahan: [
+            "2 keping mie telur, rebus",
+            "1 butir telur",
+            "2 siung bawang putih, cincang",
+            "2 sdm kecap manis",
+            "Sayur kol, cabai, garam, penyedap"
+        ],
+        langkah: [
+            "Tumis bawang, masukkan telur dan orak-arik.",
+            "Masukkan sayur dan mie.",
+            "Tambahkan kecap dan bumbu lainnya.",
+            "Aduk rata dan sajikan hangat."
+        ]
+      },
+
+
+      "puding-mangga": {
+        judul: "Puding Mangga",
+        gambar: "images/puding mangga.jpg",
+        bahan: [
+            "1 buah mangga matang, blender",
+            "1 bungkus agar-agar kuning",
+            "3 sdm gula pasir",
+            "300 ml air"
+        ],
+        langkah: [
+            "Campur semua bahan di panci.",
+            "Masak hingga mendidih.",
+            "Tuang ke cetakan, dinginkan.",
+            "Sajikan dingin."
+        ]
+      },
+
+
+      "soto-ayam": {
+        judul: "Soto Ayam",
+        gambar: "images/soto ayam.webp",
+        bahan: [
+            "200 gr ayam, rebus dan suwir",
+            "2 batang serai, memarkan",
+            "2 lembar daun jeruk",
+            "Bumbu halus: bawang merah, bawang putih, kunyit, kemiri",
+            "Toge, kol, seledri, sambal, jeruk nipis"
+        ],
+        langkah: [
+            "Tumis bumbu dan rempah hingga harum.",
+            "Masukkan air dan ayam suwir.",
+            "Masak hingga bumbu meresap.",
+            "Sajikan dengan pelengkap."
+        ]
+      },
+
+
+      "roti-bakar": {
+        judul: "Roti Bakar Coklat Keju",
+        gambar: "images/roti bakar coklat keju.jpeg",
+        bahan: [
+            "2 lembar roti tawar",
+            "Margarin",
+            "Meses coklat dan keju parut"
+        ],
+        langkah: [
+            "Olesi roti dengan margarin.",
+            "Panggang di teflon hingga kecoklatan.",
+            "Isi dengan coklat dan keju.",
+            "Tutup dan panggang sebentar lagi."
+        ]
+      },
+
+
+      "perkedel-kentang": {
+        judul: "Perkedel Kentang",
+        gambar: "images/perkedel kentang.jpg",
+        bahan: [
+        "5 buah kentang, kupas dan potong-potong",
+        "1 butir telur",
+        "2 siung bawang putih, haluskan",
+        "1 batang daun seledri, iris halus",
+        "Garam, merica, dan kaldu bubuk secukupnya",
+        "Minyak goreng"
+        ],
+        langkah: [
+        "Goreng kentang hingga matang, tiriskan.",
+        "Haluskan kentang, campur dengan bawang putih, seledri, garam, merica, dan kaldu.",
+        "Masukkan telur, aduk rata. Bentuk bulat pipih.",
+        "Goreng dalam minyak panas hingga kecokelatan."
+        ]
+      },
+
+      
+      "dadar-gulung": {
+        judul: "Dadar Gulung Isi Kelapa",
+        gambar: "images/dadar gulung.jpg",
+        bahan: [
+        "100 gr kelapa parut",
+        "50 gr gula merah, serut",
+        "1 lembar daun pandan",
+        "100 gr tepung terigu",
+        "250 ml air",
+        "1 butir telur",
+        "Pewarna hijau pandan secukupnya"
+        ],
+        langkah: [
+        "Campur kelapa, gula merah, dan pandan. Masak hingga mengering, angkat.",
+        "Campur terigu, telur, air, dan pewarna. Buat adonan dadar.",
+        "Masak dadar di teflon tipis-tipis.",
+        "Isi dengan kelapa, lipat dan gulung."
+        ]
+      },
+
+      
+      "nasi-uduk": {
+        judul: "Nasi Uduk Komplit",
+        gambar: "images/nasi uduk.webp",
+        bahan: [
+        "2 gelas beras, cuci bersih",
+        "500 ml santan",
+        "2 lembar daun salam",
+        "1 batang serai, geprek",
+        "1 sdt garam"
+        ],
+        langkah: [
+        "Campur beras, santan, daun salam, serai, dan garam.",
+        "Masak seperti menanak nasi biasa.",
+        "Setelah matang, kukus kembali agar lebih pulen.",
+        "Sajikan dengan lauk seperti telur, tempe, sambal, dan bawang goreng."
+        ]
+      },
+
+      "bakwan-sayur": {
+        judul: "Bakwan Sayur Renyah",
+        gambar: "images/bakwan sayur.jpg",
+        bahan: [
+        "100 gr tepung terigu",
+        "1 buah wortel, serut",
+        "1 genggam kol, iris halus",
+        "1 batang daun bawang, iris",
+        "1 siung bawang putih, haluskan",
+        "Air secukupnya, garam, merica"
+        ],
+        langkah: [
+        "Campur semua bahan dalam wadah.",
+        "Tambahkan air sedikit demi sedikit hingga adonan kental.",
+        "Panaskan minyak, goreng adonan per sendok hingga kuning keemasan.",
+        "Tiriskan dan sajikan."
+        ]
+      }
+
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const resepId = params.get("id");
+    const data = resepData[resepId];
+
+    if (data) {
+      document.getElementById("judul-resep").textContent = data.judul;
+      document.getElementById("gambar-resep").src = data.gambar;
+      document.getElementById("gambar-resep").alt = "Gambar " + data.judul;
+
+      const bahanList = document.getElementById("bahan-list");
+      data.bahan.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        bahanList.appendChild(li);
+      });
+
+      const langkahList = document.getElementById("langkah-list");
+      data.langkah.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        langkahList.appendChild(li);
+      });
+    } else {
+      document.getElementById("judul-resep").textContent = "Resep tidak ditemukan.";
+    }
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Kitchen Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffffff;
+      color: #000;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    header {
+      background-color: #ffffff;
+      padding: 20px 40px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 600;
+      color: #d600d6;
+      transition: color 0.3s ease;
+    }
+
+    nav a {
+      text-decoration: none;
+      margin: 0 10px;
+      color: #000;
+      font-weight: 400;
+      transition: color 0.3s ease;
+    }
+
+    .mode-toggle {
+      padding: 6px 14px;
+      border: 2px solid #d600d6;
+      background-color: transparent;
+      font-weight: 600;
+      cursor: pointer;
+      color: #d600d6;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .mode-toggle:hover {
+      background-color: #d600d6;
+      color: white;
+    }
+
+    h2 {
+      color: #d600d6;
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 50px;
+    }
+
+    .card {
+      background-color: #fae6fa;
+      border-left: 6px solid #d600d6;
+      padding: 20px;
+      margin: 20px auto;
+      width: 80%;
+      border-radius: 8px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .card ul {
+      padding-left: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+
+      .hero .image {
+        justify-content: center;
+        margin-bottom: 30px;
+      }
+    }
+
+    nav a.active {
+    border-bottom: 2px solid #d600d6;
+    padding-bottom: 4px;
+    font-weight: 600;
+    }
+
+    .arrow-left {
+      display: inline-flex;
+      align-items: center;
+      font-size: 15px;
+      padding: 10px 15px;
+      border: 2px solid #d600d6;
+      color: #d600d6;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin-left: 130px;
+      margin-top: 40px; 
+         
+    }
+
+    .arrow-left i {
+      margin-right: 8px;
+    }
+
+    .arrow-left:hover {
+      background-color: #d600d6;
+      color: white;
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <header>
+    <div class="navbar">
+      <div class="logo">Smart Kitchen Guide.</div>
+      <nav>
+        <a href="index.html" >Home</a>
+        <a href="resep.html">Resep</a>
+        <a href="perawatan.html" class="active" aria-current="page">Perawatan Dapur</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+<a href="perawatan.html" class="arrow-left">&#8592;</a>
+
+<h2>Perawatan Alat Dapur</h2>
+
+
+<div class="card">
+  <h3>🔪 Pisau Dapur</h3>
+  <ul>
+    <li>Gunakan talenan kayu atau plastik agar mata pisau tidak cepat tumpul.</li>
+    <li>Asah pisau secara rutin menggunakan batu asah atau alat pengasah khusus.</li>
+    <li>Cuci dengan air hangat dan sabun, lalu segera keringkan agar tidak berkarat.</li>
+    <li>Simpan di tempat yang aman, seperti rak pisau atau magnetic strip.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>🍳 Panci & Wajan</h3>
+  <ul>
+    <li>Gunakan spons lembut saat mencuci agar tidak merusak lapisan anti lengket.</li>
+    <li>Hindari menggunakan api terlalu besar agar permukaan tidak cepat rusak.</li>
+    <li>Jika ada kerak gosong, rendam dengan air panas & baking soda sebelum digosok.</li>
+    <li>Simpan di tempat kering agar tidak berkarat.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>🔥 Oven & Microwave</h3>
+  <ul>
+    <li>Lap bagian dalam microwave secara rutin dengan kain lembut & cuka untuk menghilangkan bau makanan.</li>
+    <li>Jangan gunakan wadah plastik biasa di microwave, gunakan wadah khusus microwave.</li>
+    <li>Untuk oven, bersihkan sisa minyak dan remah-remah makanan secara berkala agar tidak menimbulkan asap saat digunakan.</li>
+  </ul>
+</div>
+
+<div class="card">
+    <h3>🥄 Sendok Kayu</h3>
+    <ul>
+      <li>Cuci segera setelah digunakan agar tidak menyerap bau dan warna makanan.</li>
+      <li>Keringkan dengan lap bersih, jangan direndam lama dalam air.</li>
+      <li>Lapisi minyak sayur sesekali untuk menjaga kelembapannya.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🧂 Talenan</h3>
+    <ul>
+      <li>Gunakan talenan berbeda untuk daging dan sayur untuk menghindari kontaminasi silang.</li>
+      <li>Cuci dengan air panas dan sabun setelah dipakai.</li>
+      <li>Keringkan secara menyeluruh sebelum disimpan.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🥣 Blender</h3>
+    <ul>
+      <li>Bersihkan langsung setelah digunakan dengan air hangat dan sabun.</li>
+      <li>Jangan rendam bagian motor listriknya dalam air.</li>
+      <li>Cek dan bersihkan bagian pisau secara berkala agar tetap tajam.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🍚 Rice Cooker</h3>
+    <ul>
+      <li>Cuci wadah dalamnya dengan spons lembut agar tidak tergores.</li>
+      <li>Lap bagian luar dengan kain lembab, jangan disiram air langsung.</li>
+      <li>Kosongkan sisa air di bawah wadah (jika ada) agar tidak berjamur.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>🫖 Ketel / Teko Air</h3>
+    <ul>
+      <li>Bersihkan bagian dalam secara berkala dengan campuran air dan cuka untuk menghilangkan kerak kapur.</li>
+      <li>Jangan biarkan air mengendap terlalu lama di dalamnya agar tidak menimbulkan bau.</li>
+      <li>Keringkan bagian bawah ketel sebelum diletakkan di atas kompor listrik atau gas.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🧊 Ice Tray (Cetakan Es)</h3>
+    <ul>
+      <li>Cuci dengan sabun sebelum dan sesudah digunakan agar tidak menimbulkan bau dari freezer.</li>
+      <li>Hindari menyimpan makanan berbau tajam di dekat tray agar es tidak menyerap aroma tersebut.</li>
+      <li>Lapisi dengan plastik food wrap jika ingin menjaga kebersihannya lebih lama.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🫙 Wadah Bumbu Kaca/Plastik</h3>
+    <ul>
+      <li>Cuci dan keringkan secara menyeluruh sebelum diisi ulang agar tidak ada sisa bumbu lama yang menggumpal.</li>
+      <li>Gunakan sendok bersih setiap kali mengambil bumbu agar tidak menimbulkan jamur atau bakteri.</li>
+      <li>Simpan di tempat kering dan jauh dari sinar matahari langsung untuk menjaga kualitas bumbu.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🍲 Presto (Pressure Cooker)</h3>
+    <ul>
+      <li>Setelah digunakan, pastikan membongkar semua bagian (tutup, karet, katup) untuk dibersihkan secara menyeluruh.</li>
+      <li>Cek kondisi karet penutup dan katup uap secara rutin agar tidak rusak atau bocor.</li>
+      <li>Simpan dalam keadaan terbuka atau lepas tutup agar tidak lembab dan berjamur.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🥫 Pembuka Kaleng Manual</h3>
+    <ul>
+      <li>Cuci segera setelah digunakan agar tidak ada sisa makanan menempel dan menyebabkan karat.</li>
+      <li>Keringkan dengan kain kering terutama bagian mekaniknya.</li>
+      <li>Olesi sedikit minyak goreng pada engsel agar tetap lancar digunakan.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🥄 Termos Air Panas</h3>
+    <ul>
+      <li>Kosongkan air setelah pemakaian untuk mencegah endapan kalsium atau bau tidak sedap.</li>
+      <li>Cuci bagian dalam dengan air hangat + baking soda untuk menghilangkan noda teh/kopi.</li>
+      <li>Simpan dalam keadaan terbuka tanpa tutup agar tidak lembab di dalamnya.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🧀 Keju Grater (Pemotong/Parutan Keju)</h3>
+    <ul>
+      <li>Bersihkan dengan air panas dan sabun setelah dipakai agar sisa keju tidak mengeras.</li>
+      <li>Gunakan tusuk gigi atau sikat halus untuk membersihkan sela-sela parutan.</li>
+      <li>Keringkan secara menyeluruh sebelum disimpan agar tidak karatan (jika berbahan logam).</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🍳 Kompor Gas</h3>
+    <ul>
+      <li>Bersihkan tatakan dan kepala api dari sisa makanan dan minyak secara rutin.</li>
+      <li>Cek selang dan regulator gas secara berkala untuk menghindari kebocoran.</li>
+      <li>Gunakan jarum untuk membersihkan lubang api yang tersumbat.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🥤 Juicer Manual / Elektrik</h3>
+    <ul>
+      <li>Cuci semua komponen yang bisa dilepas dengan sabun dan air hangat setiap selesai digunakan.</li>
+      <li>Keringkan dengan kain bersih, terutama bagian pisau dan saringan agar tidak berkarat.</li>
+      <li>Untuk yang elektrik, lap badan mesin dengan kain lembab tanpa menyiram air langsung.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🧁 Loyang Panggang</h3>
+    <ul>
+      <li>Gunakan kertas roti atau olesi margarin untuk mencegah adonan lengket.</li>
+      <li>Bersihkan dengan spons lembut, hindari kawat gosok yang bisa merusak lapisan anti lengket.</li>
+      <li>Keringkan sebelum disimpan untuk mencegah karat, terutama bagian sudut dan lipatan.</li>
+    </ul>
+  </div>  
+  
+  <div class="card">
+    <h3>🥛 Gelas Ukur</h3>
+    <ul>
+      <li>Cuci dengan air sabun setelah digunakan, terutama jika dipakai untuk bahan berminyak.</li>
+      <li>Jaga takaran cetakan tetap terlihat dengan tidak menggosok terlalu keras.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🍽️ Saringan</h3>
+    <ul>
+      <li>Langsung bilas setelah digunakan agar sisa makanan tidak menempel.</li>
+      <li>Gunakan sikat kecil untuk membersihkan lubang saringan yang tersumbat.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🧄 Parutan</h3>
+    <ul>
+      <li>Bersihkan segera setelah digunakan agar sisa makanan tidak mengering.</li>
+      <li>Gunakan sikat gigi bekas untuk membersihkan sisi-sisi kecil parutan.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🍳 Cetakan Kue</h3>
+    <ul>
+      <li>Cuci dengan sabun dan air hangat setelah pemakaian.</li>
+      <li>Keringkan dengan kain bersih, lalu simpan dalam wadah tertutup agar tidak berdebu.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🥄 Spatula Silikon</h3>
+    <ul>
+      <li>Cuci dengan sabun lembut, hindari gosokan kasar agar tidak merusak permukaan.</li>
+      <li>Jangan dijemur langsung di bawah sinar matahari agar tidak getas.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🍴 Pisau Serbaguna</h3>
+    <ul>
+      <li>Gunakan hanya untuk fungsi utamanya, jangan membuka kaleng atau es batu.</li>
+      <li>Asah secara berkala dan simpan di tempat kering.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🧽 Spons Cuci</h3>
+    <ul>
+      <li>Bilas spons setelah digunakan dan peras sampai kering.</li>
+      <li>Rebus atau rendam dalam air panas secara rutin untuk membunuh bakteri.</li>
+      <li>Ganti spons secara berkala (seminggu sekali lebih ideal).</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🥄 Mixer</h3>
+    <ul>
+      <li>Lepas bagian mata pengocok dan cuci setelah dipakai.</li>
+      <li>Lap badan mesinnya dengan kain lembab.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🥘 Slow Cooker</h3>
+    <ul>
+      <li>Cuci bagian dalamnya dengan lembut dan jangan menggores permukaan keramiknya.</li>
+      <li>Lap bagian luar dan kabel dengan kain kering.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🍡 Tusuk Sate / Tusuk Gigi</h3>
+    <ul>
+      <li>Simpan di tempat tertutup untuk menjaga kebersihannya.</li>
+      <li>Jauhkan dari area lembab agar tidak berjamur.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🍰 Timbangan Dapur</h3>
+    <ul>
+      <li>Jaga agar tetap bersih dan kering.</li>
+      <li>Ganti baterai secara berkala dan simpan di tempat aman dari benturan.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🥤 Botol Minum</h3>
+    <ul>
+      <li>Bersihkan dengan sikat khusus bagian dalam botol.</li>
+      <li>Jemur bagian tutup botol agar tidak lembap dan bau.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🥄 Sendok & Garpu Stainless</h3>
+    <ul>
+      <li>Cuci setelah dipakai dan keringkan agar tidak meninggalkan noda air.</li>
+      <li>Simpan dalam wadah tertutup untuk menjaga kebersihan.</li>
+    </ul>
+  </div>
+  
+  <div class="card">
+    <h3>🧺 Keranjang Penyimpanan</h3>
+    <ul>
+      <li>Bersihkan secara berkala dari debu atau remah makanan.</li>
+      <li>Gunakan liner atau kertas agar bahan makanan tidak langsung bersentuhan dengan permukaan.</li>
+    </ul>
+  </div>
+  
+
+</body>
+</html>

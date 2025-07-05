@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Smart Kitchen Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;900&display=swap" rel="stylesheet">
+    <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffffff;
+      color: #000;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    header {
+      background-color: #ffffff;
+      padding: 20px 40px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 600;
+      color: #d600d6;
+      transition: color 0.3s ease;
+    }
+
+    nav a {
+      text-decoration: none;
+      margin: 0 10px;
+      color: #000;
+      font-weight: 400;
+      transition: color 0.3s ease;
+    }
+
+    .mode-toggle {
+      padding: 6px 14px;
+      border: 2px solid #d600d6;
+      background-color: transparent;
+      font-weight: 600;
+      cursor: pointer;
+      color: #d600d6;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .mode-toggle:hover {
+      background-color: #d600d6;
+      color: white;
+    }
+
+
+
+    main {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      font-size: 30px;
+      margin-bottom: 50px;
+    }
+
+    .cards {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+   }
+
+  .card {
+      background: white;
+      padding: 50px;
+      width: 400px;
+      height: 360px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+
+  }
+
+  .card img {
+    width: 80%;
+    max-width: 200px;
+    border-radius: 8px;
+    height: 150px; /* tinggi tetap */
+    margin-bottom: 5px;
+  }
+
+  .card h3 {
+    color: #d600d6;
+    font-size: 20px;
+    margin: 0;
+    margin-bottom: 5px,0;
+  }
+
+  .card p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    }
+
+  .btn {
+    background-color: #d600d6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  .btn:hover {
+    background-color: #b000b0;
+  }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+
+      .hero .image {
+        justify-content: center;
+        margin-bottom: 30px;
+      }
+    }
+
+    nav a.active {
+    border-bottom: 2px solid #d600d6;
+    padding-bottom: 4px;
+    font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+        <div class="logo"> Smart Kitchen Guide.</div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="resep.html">Resep</a>
+          <a href="perawatan.html" class="active" aria-current="page">Perawatan Dapur</a>
+        </nav>
+        </div>
+      </header>
+
+
+  <main>
+    <h2>Perawatan Alat Dan Bahan Masakan Di Dapur</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="images/alatmasak.png" alt="Alat Masak">
+        <h3>Alat Masak</h3>
+        <p>Rawat alat dapur anda agar lebih tahan lama dan tetap higienis.</p>
+        <a href="perawatan-alat.html" class="btn">Pelajari</a>
+      </div>
+
+      <div class="card">
+        <img src="images/bahanmasak.jpeg" alt="Bahan Masakan">
+        <h3>Bahan Masakan</h3>
+        <p>Ketahui agar bahan makanan lebih tahan lama dan tetap segar.</p>
+        <a href="perawatan-bahan.html" class="btn">Pelajari</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
